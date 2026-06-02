@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Gupta — Product Manager</title>
+<meta name="description" content="Aditya Gupta — Product Manager. I take problems from idea to launch, shipping async across international markets while balancing user needs with business outcomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1E6;
+    --paper-2:#F0E7D6;
+    --card:#FBF7EE;
+    --ink:#1B1613;
+    --ink-soft:#574E44;
+    --line:#E0D5C0;
+    --accent:#FF5A30;
+    --accent-ink:#C8401C;
+    --cool:#1F6F6B;
+    --shadow:rgba(27,22,19,.10);
+    --display:"Fraunces",Georgia,serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:18px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(var(--line) .9px,transparent .9px);
+    background-size:26px 26px;opacity:.45;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+    opacity:.035;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+  ::selection{background:var(--accent);color:var(--paper)}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(120%) blur(8px);
+    background:color-mix(in srgb,var(--paper) 80%,transparent);
+    border-bottom:1px solid transparent;transition:border-color .3s}
+  header.scrolled{border-color:var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:var(--display);font-weight:600;font-size:1.28rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.55rem}
+  .brand .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--accent);display:inline-block}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-weight:500;font-size:.97rem;position:relative;padding:.2rem 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .28s ease}
+  .nav-links a:hover::after{width:100%}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;
+    padding:.62rem 1.15rem;border-radius:100px;border:1.5px solid var(--ink);transition:.22s ease}
+  .btn:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px)}
+  .btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-accent:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:clamp(56px,9vw,120px) 0 clamp(48px,7vw,90px);position:relative}
+  .hero .blob{position:absolute;z-index:0;width:520px;height:520px;right:-120px;top:-40px;
+    background:radial-gradient(circle at 35% 35%,rgba(255,90,48,.28),transparent 62%);
+    filter:blur(10px);border-radius:50%;pointer-events:none}
+  .hero-kicker{color:var(--accent-ink);margin-bottom:1.4rem}
+  h1{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.02;
+    font-size:clamp(2.7rem,7.6vw,5.6rem)}
+  h1 .rot-wrap{display:inline-block;position:relative}
+  .rot{color:var(--accent);font-style:italic;display:inline-block;transition:opacity .35s ease,transform .35s ease}
+  .rot.swap{opacity:0;transform:translateY(.25em)}
+  .lede{font-size:clamp(1.1rem,2.1vw,1.4rem);color:var(--ink-soft);max-width:46ch;margin:1.6rem 0 2.2rem;line-height:1.55}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+  .text-link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .text-link:hover{color:var(--accent-ink)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:clamp(46px,6vw,72px)}
+  .stat{background:var(--card);padding:1.5rem 1.4rem}
+  .stat .n{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1;letter-spacing:-.02em}
+  .stat .l{color:var(--ink-soft);font-size:.86rem;margin-top:.5rem}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:clamp(64px,9vw,118px) 0;position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:clamp(34px,5vw,56px)}
+  .sec-head .idx{color:var(--accent)}
+  h2{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.05;
+    font-size:clamp(2rem,4.6vw,3.3rem)}
+  .sec-sub{color:var(--ink-soft);max-width:54ch;margin-top:.8rem;font-size:1.05rem}
+
+  /* ---------- WORK ---------- */
+  .case{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,4vw,56px);
+    padding:clamp(26px,3.4vw,40px);background:var(--card);border:1px solid var(--line);
+    border-radius:20px;margin-bottom:1.5rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+  .case:hover{transform:translateY(-4px);box-shadow:0 24px 50px -22px var(--shadow);border-color:var(--accent)}
+  .case-meta .tag{display:inline-block;background:var(--paper-2);border:1px solid var(--line);
+    border-radius:100px;padding:.3rem .8rem;font-size:.78rem;font-weight:600;margin:0 .4rem .4rem 0}
+  .case h3{font-family:var(--display);font-weight:600;font-size:clamp(1.45rem,2.6vw,2rem);
+    line-height:1.1;letter-spacing:-.01em;margin:.9rem 0}
+  .case .role{color:var(--accent-ink)}
+  .case .live{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.92rem;
+    margin-top:1rem;border-bottom:2px solid var(--cool);padding-bottom:2px;color:var(--cool)}
+  .problem{color:var(--ink-soft);margin:1rem 0 1.4rem}
+  .approach{list-style:none;display:grid;gap:.7rem}
+  .approach li{position:relative;padding-left:1.5rem;font-size:.98rem}
+  .approach li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .impact{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:1.6rem;padding-top:1.4rem;border-top:1px dashed var(--line)}
+  .impact .m{min-width:88px}
+  .impact .m b{font-family:var(--display);font-weight:600;font-size:1.6rem;display:block;line-height:1;letter-spacing:-.02em}
+  .impact .m span{color:var(--ink-soft);font-size:.82rem}
+
+  /* ---------- BUILDS ---------- */
+  .builds-head{display:flex;align-items:baseline;gap:1rem;margin:clamp(40px,5vw,64px) 0 1.8rem}
+  .builds-head h3{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em}
+  .builds-head .mono{color:var(--accent)}
+  .builds{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .build{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+    border-radius:18px;padding:1.6rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+  .build:hover{transform:translateY(-4px);box-shadow:0 22px 46px -22px var(--shadow);border-color:var(--accent)}
+  .build .mono{color:var(--accent-ink)}
+  .build h4{font-family:var(--display);font-weight:600;font-size:1.4rem;letter-spacing:-.01em;margin:.5rem 0 .6rem}
+  .build p{color:var(--ink-soft);font-size:.96rem;flex:1}
+  .build .tags{margin:1.1rem 0 1rem}
+  .build .tag{display:inline-block;background:var(--paper-2);border:1px solid var(--line);
+    border-radius:100px;padding:.26rem .7rem;font-size:.74rem;font-weight:600;margin:0 .35rem .35rem 0}
+  .build .live{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.92rem;
+    color:var(--cool);border-bottom:2px solid var(--cool);padding-bottom:2px;align-self:flex-start}
+
+  /* ---------- CASE STUDIES (accordion) ---------- */
+  .case .cs-link{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.92rem;
+    margin-top:1.3rem;color:var(--accent-ink);border-bottom:2px solid var(--accent);padding-bottom:2px}
+  .case .cs-link:hover{color:var(--accent)}
+  .cs{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:1.1rem;
+    overflow:hidden;transition:border-color .3s,box-shadow .3s}
+  .cs[open]{border-color:var(--accent);box-shadow:0 20px 44px -24px var(--shadow)}
+  .cs summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+    gap:1.2rem;padding:clamp(20px,2.6vw,30px) clamp(22px,3vw,34px)}
+  .cs summary::-webkit-details-marker{display:none}
+  .cs-sum h3{font-family:var(--display);font-weight:600;font-size:clamp(1.22rem,2.3vw,1.7rem);
+    letter-spacing:-.01em;line-height:1.14;margin-top:.45rem}
+  .cs-toggle{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);position:relative;transition:.25s}
+  .cs-toggle::before,.cs-toggle::after{content:"";position:absolute;background:var(--ink);left:50%;top:50%;transform:translate(-50%,-50%);transition:.25s}
+  .cs-toggle::before{width:13px;height:2px}
+  .cs-toggle::after{width:2px;height:13px}
+  .cs[open] .cs-toggle{background:var(--accent);border-color:var(--accent)}
+  .cs[open] .cs-toggle::before,.cs[open] .cs-toggle::after{background:#fff}
+  .cs[open] .cs-toggle::after{transform:translate(-50%,-50%) scaleY(0)}
+  .cs-body{padding:0 clamp(22px,3vw,34px) clamp(26px,3.4vw,38px);border-top:1px dashed var(--line)}
+  .cs-meta{display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem;margin:1.4rem 0 .4rem}
+  .cs-meta div{display:flex;flex-direction:column;gap:.2rem;font-weight:600;font-size:.95rem}
+  .cs-meta .mono{color:var(--accent-ink);font-weight:400}
+  .cs-body h4{font-family:var(--display);font-weight:600;font-size:1.16rem;margin:1.6rem 0 .5rem;letter-spacing:-.01em}
+  .cs-body p{color:var(--ink-soft);margin-bottom:.4rem}
+  .cs-body ul{list-style:none;display:grid;gap:.7rem;margin-top:.3rem}
+  .cs-body ul li{position:relative;padding-left:1.5rem;color:var(--ink-soft)}
+  .cs-body ul li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .cs-note{background:var(--paper-2);border:1px dashed var(--line);border-radius:14px;padding:1.1rem 1.3rem;color:var(--ink-soft);font-size:.95rem;margin-top:1rem}
+
+  /* ---------- ABOUT + PRINCIPLES ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+  .about-grid p{margin-bottom:1.1rem;color:var(--ink-soft)}
+  .about-grid p strong{color:var(--ink);font-weight:600}
+  .principles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .pr{background:var(--card);padding:1.5rem 1.6rem}
+  .pr .pn{color:var(--accent)}
+  .pr h4{font-family:var(--display);font-weight:600;font-size:1.25rem;margin:.5rem 0 .4rem;letter-spacing:-.01em}
+  .pr p{color:var(--ink-soft);font-size:.95rem;margin:0}
+
+  /* ---------- TOOLKIT ---------- */
+  .kit{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .kit-col h4{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1rem}
+  .kit-col ul{list-style:none;display:grid;gap:.55rem}
+  .kit-col li{font-weight:500;padding-bottom:.55rem;border-bottom:1px solid var(--line)}
+
+  /* ---------- BACKGROUND ---------- */
+  .bg-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
+  .bg-col h4{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1.4rem}
+  .bg-item{padding:1rem 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+  .bg-item:first-of-type{border-top:0}
+  .bg-item .t{font-weight:600}
+  .bg-item .s{color:var(--ink-soft);font-size:.92rem}
+  .bg-item .y{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);white-space:nowrap}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper);border-radius:28px;padding:clamp(40px,6vw,76px);text-align:center;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;width:460px;height:460px;left:50%;top:-60%;transform:translateX(-50%);
+    background:radial-gradient(circle,rgba(255,90,48,.4),transparent 60%);pointer-events:none}
+  .contact h2{color:var(--paper);position:relative}
+  .contact p{color:#C9BFB0;max-width:48ch;margin:1rem auto 2rem;position:relative}
+  .contact .email{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,4vw,2.4rem);
+    border-bottom:2px solid var(--accent);padding-bottom:.2rem;position:relative;display:inline-block;transition:.2s;word-break:break-all}
+  .contact .email:hover{color:var(--accent)}
+  .socials{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem;position:relative}
+  .socials a{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#C9BFB0;border-bottom:1px solid transparent;padding-bottom:2px;transition:.2s}
+  .socials a:hover{color:var(--paper);border-color:var(--accent)}
+
+  footer{padding:48px 0;border-top:1px solid var(--line);margin-top:clamp(60px,8vw,100px);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--ink-soft);font-size:.86rem}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== RESPONSIVE ===== */
+
+  /* Laptops & large tablets */
+  @media(max-width:1080px){
+    .wrap{padding:0 24px}
+    .nav-links{gap:1.4rem}
+  }
+
+  /* Tablet — collapse nav, single-column cases, 2-up builds */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;
+      background:var(--paper);border-bottom:1px solid var(--line);padding:1.4rem 24px 1.8rem;gap:1.2rem;align-items:flex-start}
+    .nav-links.open a{font-size:1.05rem}
+    .case{grid-template-columns:1fr;gap:1.4rem}
+    .about-grid{grid-template-columns:1fr}
+    .builds{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* Small tablets — stack toolkit */
+  @media(max-width:760px){
+    .kit{grid-template-columns:1fr;gap:2rem}
+    .sec-head{flex-wrap:wrap}
+  }
+
+  /* Large phones */
+  @media(max-width:680px){
+    .wrap{padding:0 20px}
+    nav{height:64px}
+    .nav-links.open{top:64px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .bg-grid{grid-template-columns:1fr;gap:1.8rem}
+  }
+
+  /* Phones */
+  @media(max-width:560px){
+    body{font-size:17px}
+    .wrap{padding:0 18px}
+    .builds{grid-template-columns:1fr}
+    .impact{gap:1.1rem 1.4rem}
+    .impact .m{min-width:70px}
+    .impact .m b{font-size:1.45rem}
+    .case{padding:22px;border-radius:16px}
+    .build{padding:1.3rem}
+    .contact{padding:34px 22px;border-radius:22px}
+    footer{flex-direction:column}
+    .hero .blob{width:340px;height:340px;right:-90px;top:0}
+    .bg-item{flex-wrap:wrap;gap:.3rem}
+  }
+
+  /* Tiny phones */
+  @media(max-width:380px){
+    .stats{grid-template-columns:1fr}
+    .nav-links.open .btn{align-self:stretch;text-align:center;justify-content:center}
+    .case-meta .tag,.build .tag{font-size:.7rem}
+  }
+
+  /* Phones in landscape — trim vertical space */
+  @media(max-height:540px) and (orientation:landscape){
+    .hero{padding:46px 0 34px}
+    .hero .blob{display:none}
+    section{padding:60px 0}
+  }
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top"><span class="dot"></span>Aditya Gupta</a>
+      <div class="nav-links" id="navlinks">
+        <a href="#work">Work</a>
+        <a href="#case-studies">Case studies</a>
+        <a href="#about">About</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#" id="resume">Résumé</a>
+      </div>
+      <button class="menu-btn" id="menuBtn">Menu</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob"></div>
+    <div class="wrap">
+      <p class="mono hero-kicker reveal">Product Manager · Bengaluru, India</p>
+      <h1 class="reveal">Hi, I'm Aditya,<br>a <span class="rot-wrap"><span class="rot" id="rot">product manager</span></span></h1>
+      <p class="lede reveal">I take problems from idea to launch — shipping async across international teams and balancing real user needs with clear business outcomes.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-accent" href="#work">See my work</a>
+        <a class="text-link" href="#contact">Say hello →</a>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><div class="n">3+ yrs</div><div class="l">building products</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">international markets</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">products built solo</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">on-time releases</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono idx">01</span>
+        <div>
+          <h2>Selected work</h2>
+          <p class="sec-sub">What was broken, what I did, and what changed — plus the things I ship on the side.</p>
+        </div>
+      </div>
+
+      <article class="case reveal">
+        <div class="case-meta">
+          <span class="mono">Regulatory fintech · KSA</span>
+          <h3>Launching an e-invoicing compliance product, 0→1</h3>
+          <p class="role">Associate PM · product owner</p>
+          <div style="margin-top:1rem">
+            <span class="tag">0→1</span><span class="tag">Compliance</span><span class="tag">GTM</span>
+          </div>
+        </div>
+        <div>
+          <p class="problem">Saudi Arabia mandated e-invoicing on fixed government deadlines. The brief: launch a compliant, standalone billing product to enter a new regulatory market — on time, without disrupting the core suite.</p>
+          <ul class="approach">
+            <li>Owned the standalone product end to end with distributed teams, against fixed regulatory dates</li>
+            <li>Grounded the backlog by talking to clients and chartered accountants, not guesswork</li>
+            <li>Localized the product, demos, and enablement for regional sales teams</li>
+            <li>Redesigned the invoice workflow using telemetry on where users got stuck</li>
+          </ul>
+          <div class="impact">
+            <div class="m"><b>On&nbsp;time</b><span>regulatory deadline</span></div>
+            <div class="m"><b>−30%</b><span>support calls</span></div>
+            <div class="m"><b>3</b><span>regions enabled</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-meta">
+          <span class="mono">Regulatory delivery · MENA &amp; Africa</span>
+          <h3>Keeping compliance releases on time across markets</h3>
+          <p class="role">Associate PM · delivery &amp; quality</p>
+          <div style="margin-top:1rem">
+            <span class="tag">Delivery</span><span class="tag">Process</span><span class="tag">Async</span>
+          </div>
+        </div>
+        <div>
+          <p class="problem">Shipping compliance products across several MENA &amp; Africa markets meant shifting requirements, government deadlines, and distributed teams — easy ground for rework and delays.</p>
+          <ul class="approach">
+            <li>Shifted delivery from waterfall to agile and standardized a delivery framework reused across projects</li>
+            <li>Replaced spec-based handoffs with live prototypes, so engineers built from real flows</li>
+            <li>Owned UAT across release cycles to hold quality before rollout</li>
+          </ul>
+          <div class="impact">
+            <div class="m"><b>100%</b><span>on-time releases</span></div>
+            <div class="m"><b>Faster</b><span>setup &amp; onboarding</span></div>
+            <div class="m"><b>Reused</b><span>delivery framework</span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="builds-head">
+        <span class="mono">Side projects</span>
+        <h3>Things I've built</h3>
+      </div>
+      <div class="builds">
+        <div class="build reveal">
+          <span class="mono">Real-time game</span>
+          <h4>Cabo</h4>
+          <p>A real-time, no-signup card game for 2–8 players — friends jump in with just a name, an emoji, and a 6-character room code, each on their own device.</p>
+          <div class="tags"><span class="tag">0→1</span><span class="tag">Real-time</span><span class="tag">Multiplayer</span></div>
+          <a class="live" href="https://call-a-cab-games.lovable.app/" target="_blank" rel="noopener">▶ Play it ↗</a>
+        </div>
+        <div class="build reveal">
+          <span class="mono">Healthtech · AI</span>
+          <h4>Asli Aur Sasti</h4>
+          <p>Upload a prescription and instantly find cheaper, regulated medicine alternatives with the same salt composition. WhatsApp-first, privacy-first, 100% free.</p>
+          <div class="tags"><span class="tag">AI</span><span class="tag">Social impact</span><span class="tag">0→1</span></div>
+          <a class="live" href="https://wahiparsasti.lovable.app/" target="_blank" rel="noopener">Open it ↗</a>
+        </div>
+        <div class="build reveal">
+          <span class="mono">AI tool</span>
+          <h4>AI PC Builder</h4>
+          <p>An AI assistant that recommends compatible PC component builds tailored to your budget and use case — taking the guesswork out of speccing a rig.</p>
+          <div class="tags"><span class="tag">AI</span><span class="tag">Tools</span><span class="tag">0→1</span></div>
+          <a class="live" href="https://ai-pc-builder-brainm-zl9v.bolt.host/" target="_blank" rel="noopener">Open it ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="case-studies">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono idx">02</span>
+        <div>
+          <h2>Case studies</h2>
+          <p class="sec-sub">Deep-dives into product problems — context, the calls I'd make, and how I'd measure success. Tap to expand.</p>
+        </div>
+      </div>
+
+      <details class="cs reveal" id="cs-cred" open>
+        <summary>
+          <div class="cs-sum">
+            <span class="mono">Consumer fintech · NextLeap capstone</span>
+            <h3>Turning CRED's financial data into a behavioral mirror</h3>
+          </div>
+          <span class="cs-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="cs-body">
+          <div class="cs-meta">
+            <div><span class="mono">Role</span>Product strategy · solo</div>
+            <div><span class="mono">Domain</span>Personal finance (PFM), India</div>
+            <div><span class="mono">Context</span>NextLeap PM Fellowship capstone</div>
+          </div>
+
+          <h4>Context</h4>
+          <p>India's premium consumer-finance market is large and growing fast, and platforms like CRED capture transactions beautifully. But for multi-card, multi-account users, "what you spent" is everywhere and "why" is nowhere — the product exits the journey exactly where people need help making sense of their money.</p>
+
+          <h4>The problem</h4>
+          <p>Premium users hit financial cognitive overload. Personal-finance apps record and chart data but don't interpret it, so month-end summaries land as judgment — triggering guilt, then avoidance. Worse, raw spending charts mislead: peer-to-peer transfers and capital movements (say, a fixed deposit rolling into a mutual fund) pollute the picture, so even the numbers users see don't reflect real lifestyle spend.</p>
+
+          <h4>Research &amp; insight</h4>
+          <p>Primary interviews surfaced two personas: a "Bill-only checker" who opens the app, sees a big number, feels uneasy, and closes it — and a "Curious Explorer" who digs in, finds subscription leaks, and feels back in control. The throughline: autopsy reports don't change behavior. Data shown after the fact, stripped of context, makes people defensive. The insight has to arrive earlier and feel safe.</p>
+
+          <h4>What I proposed — a "behavioral mirror"</h4>
+          <ul>
+            <li><b>Financial noise cancellation</b> — a pre-parsing layer that strips out transfers and capital movements to isolate true discretionary spend before anything is shown</li>
+            <li><b>Point-of-intent nudges</b> — a neutral prompt at the pre-payment screen ("you've spent ₹240 more here than last month"), so awareness arrives at the moment of agency, not as regret after</li>
+            <li><b>Narrative spending insights</b> — plain-language stories ("dining spikes the second weekend, just after payday — 4 of the last 6 months") instead of pie charts</li>
+            <li><b>Trust by design</b> — every insight is a soft hypothesis with one-tap Yes / No / Edit, confidence levels, opt-in controls, and the option to exclude sensitive categories — directly answering surveillance anxiety and misclassification guilt</li>
+          </ul>
+
+          <h4>How I'd measure success</h4>
+          <div class="impact">
+            <div class="m"><b>75%</b><span>target read-rate</span></div>
+            <div class="m"><b>23%</b><span>industry baseline</span></div>
+            <div class="m"><b>100</b><span>-user pilot</span></div>
+          </div>
+          <p>Primary metric: the open-and-read rate of monthly reflection cards (targeting ~75% against a ~23% baseline). Alongside it, a trust metric — the share of AI narratives users confirm as accurate — and retention velocity for multi-card cohorts after heavy-spend cycles, validated through a 100-user pilot.</p>
+
+          <h4>What I'd take forward</h4>
+          <p>In consumer finance the unlock isn't more data or another chart — it's interpretation delivered with emotional safety. Designing for trust (uncertainty framing, reversibility, real user agency) mattered as much as the underlying model.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono idx">03</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p style="font-family:var(--display);font-size:1.5rem;color:var(--ink);line-height:1.4;margin-bottom:1.4rem;font-weight:500">"Good products ship. Great ones ship on time, in the right market, for the right reason."</p>
+          <p>I'm a product manager with <strong>3+ years</strong> at <strong>Tally Solutions</strong>, where I work on international regulatory products across <strong>MENA &amp; Africa</strong> — taking them from idea to launch with distributed teams and hard government deadlines.</p>
+          <p>My roots are analytical. I studied <strong>Industrial &amp; Production engineering</strong>, did an <strong>MBA at IIT Roorkee</strong>, interned in risk analytics at <strong>Morgan Stanley</strong>, and I'm a <strong>Lean Six Sigma Green Belt</strong> — so I'm allergic to opinions without evidence.</p>
+          <p>I'm happiest in the messy middle: ambiguous problems, shifting requirements, and a team that needs alignment and momentum. When I'm not at work, I build things — like <strong>Cabo</strong>, a real-time card game I shipped solo. Based in <strong>Bengaluru, India</strong>.</p>
+        </div>
+        <div class="principles reveal">
+          <div class="pr"><span class="mono pn">A</span><h4>Async by default</h4><p>I've shipped across MENA and Africa with distributed teams and government deadlines. Clear scope and written context beat being in the same room.</p></div>
+          <div class="pr"><span class="mono pn">B</span><h4>Evidence over opinion</h4><p>Telemetry, escalations, and usage data tell me what to build next — not the loudest voice in the room.</p></div>
+          <div class="pr"><span class="mono pn">C</span><h4>Ship through ambiguity</h4><p>APIs break and regulations shift. I re-scope and keep things alive instead of letting good work get shelved.</p></div>
+          <div class="pr"><span class="mono pn">D</span><h4>Process is a product too</h4><p>Moving teams from waterfall to agile and building a delivery framework other teams reused — good process compounds.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH / TOOLKIT -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono idx">04</span>
+        <div>
+          <h2>How I work</h2>
+          <p class="sec-sub">The toolkit I reach for across discovery, decisions, and delivery.</p>
+        </div>
+      </div>
+      <div class="kit">
+        <div class="kit-col reveal">
+          <h4>Discover</h4>
+          <ul>
+            <li>Customer &amp; CPA interviews</li>
+            <li>L3 escalation analysis</li>
+            <li>Telemetry &amp; usage analysis</li>
+            <li>Backlog grooming with clients</li>
+            <li>Functional specs (Confluence)</li>
+          </ul>
+        </div>
+        <div class="kit-col reveal">
+          <h4>Decide</h4>
+          <ul>
+            <li>Regulatory scoping &amp; UAT</li>
+            <li>Roadmapping &amp; prioritization</li>
+            <li>GTM &amp; enablement planning</li>
+            <li>Pricing, bundling &amp; packaging</li>
+            <li>Release &amp; delivery planning</li>
+          </ul>
+        </div>
+        <div class="kit-col reveal">
+          <h4>Deliver</h4>
+          <ul>
+            <li>Async delivery w/ distributed teams</li>
+            <li>Live-prototype dev handoffs</li>
+            <li>Waterfall → Agile · PDLC</li>
+            <li>SQL · Power BI · Confluence</li>
+            <li>Six Sigma (DMAIC)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section id="background" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono idx">05</span>
+        <h2>Background &amp; recognition</h2>
+      </div>
+      <div class="bg-grid">
+        <div class="bg-col reveal">
+          <h4>Education</h4>
+          <div class="bg-item"><div><div class="t">MBA — Marketing &amp; Finance</div><div class="s">Dept. of Management Studies, IIT Roorkee</div></div><div class="y">2023</div></div>
+          <div class="bg-item"><div><div class="t">B.Tech — Industrial &amp; Production</div><div class="s">SGSITS, Indore</div></div><div class="y">2021</div></div>
+          <div class="bg-item"><div><div class="t">Morgan Stanley — Summer Intern</div><div class="s">Risk analytics · SQL &amp; Power BI · −60% report runtime</div></div><div class="y">2022</div></div>
+        </div>
+        <div class="bg-col reveal">
+          <h4>Recognition</h4>
+          <div class="bg-item"><div><div class="t">NextLeap PM Fellowship</div><div class="s">12-week fellowship · passed graduation evaluation</div></div><div class="y">2026</div></div>
+          <div class="bg-item"><div><div class="t">CAT — 96.43 %ile</div><div class="s">97.98 %ile in Quantitative Ability · ~190K candidates</div></div><div class="y">2020</div></div>
+          <div class="bg-item"><div><div class="t">Lean Six Sigma Green Belt</div><div class="s">KPMG · DMAIC methodology</div></div><div class="y">2021</div></div>
+          <div class="bg-item"><div><div class="t">4× national robotics winner</div><div class="s">IIT Indore, BITS Pilani &amp; more · led a 6-person team</div></div><div class="y">2019</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <h2>Let's build something.</h2>
+        <p>Open to product roles and a good conversation about shipping into hard, ambiguous markets. The fastest way to reach me:</p>
+        <a class="email" href="mailto:gupta.aditya.iitr@gmail.com">gupta.aditya.iitr@gmail.com</a>
+        <div class="socials">
+          <a href="https://linkedin.com/in/aditya-g98/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://call-a-cab-games.lovable.app/" target="_blank" rel="noopener">Play Cabo ↗</a>
+          <a href="#">Résumé ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>© <span id="yr"></span> Aditya Gupta. Built with care.</span>
+      <span class="mono">Product, end to end.</span>
+    </footer>
+  </div>
+</main>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 12));
+
+  const mb = document.getElementById('menuBtn'), nl = document.getElementById('navlinks');
+  mb.addEventListener('click', () => {
+    const open = nl.classList.toggle('open');
+    mb.textContent = open ? 'Close' : 'Menu';
+  });
+  nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nl.classList.remove('open'); mb.textContent = 'Menu';
+  }));
+
+  const words = ['product manager','0→1 builder','GTM operator','async shipper','systems thinker'];
+  let i = 0; const rot = document.getElementById('rot');
+  setInterval(() => {
+    rot.classList.add('swap');
+    setTimeout(() => {
+      i = (i + 1) % words.length;
+      rot.textContent = words[i];
+      rot.classList.remove('swap');
+    }, 350);
+  }, 2400);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, idx) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (idx % 4 * 70) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // case-study deep links: open the target <details> and scroll to it
+  function openCase(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.open = true;
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  document.querySelectorAll('[data-case]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); openCase(a.getAttribute('data-case')); });
+  });
+  if(location.hash && document.getElementById(location.hash.slice(1))?.tagName === 'DETAILS'){
+    openCase(location.hash.slice(1));
+  }
+</script>
+</body>
+</html>
